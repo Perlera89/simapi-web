@@ -1,0 +1,96 @@
+---
+
+---
+
+<div class="lg:hidden">
+  <button id="menuButton" class="text-slate-600 hover:text-blue-600 z-50">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-6 w-6"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M4 6h16M4 12h16M4 18h16"></path>
+    </svg>
+  </button>
+
+  <div id="mobileMenu" class="hidden fixed inset-0 bg-background z-50">
+    <div class="container mx-auto px-2 py-4">
+      <div class="flex justify-end mb-4">
+        <button
+          id="closeMenu"
+          class="text-muted-foreground hover:text-blue-600 z-50"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <nav class="space-y-6 bg-muted px-8 py-8 rounded-sm">
+        <a
+          href="#inicio"
+          class="block text-xl text-muted-foreground hover:text-foreground"
+          >Inicio</a
+        >
+        <a
+          href="#servicios"
+          class="block text-xl text-muted-foreground hover:text-foreground"
+          >Servicios</a
+        >
+        <a
+          href="#producto"
+          class="block text-xl text-muted-foreground hover:text-foreground"
+          >Productos</a
+        >
+        <a
+          href="#mision"
+          class="block text-xl text-muted-foreground hover:text-foreground"
+          >Sobre Nosotros</a
+        >
+        <a
+          href="https://docs.simapi.com"
+          class="block text-xl text-muted-foreground hover:text-foreground"
+          >Documentación</a
+        >
+      </nav>
+    </div>
+  </div>
+</div>
+
+<div id="mainContent">
+  <!-- Aquí va el contenido restante de la página -->
+</div>
+
+<script>
+  const menuButton = document.getElementById("menuButton");
+  const closeMenu = document.getElementById("closeMenu");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const mainContent = document.getElementById("mainContent");
+
+  menuButton?.addEventListener("click", () => {
+    mobileMenu?.classList.remove("hidden");
+    mainContent?.classList.add("opacity-50");
+    document.body.style.overflow = "hidden";
+  });
+
+  closeMenu?.addEventListener("click", () => {
+    mobileMenu?.classList.add("hidden");
+    mainContent?.classList.remove("opacity-50");
+    document.body.style.overflow = "auto";
+  });
+</script>

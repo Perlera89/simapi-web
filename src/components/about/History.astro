@@ -1,0 +1,51 @@
+---
+import SectionTitle from "./SectionTitle.astro";
+
+const milestones = [
+  {
+    year: "2024",
+    title: "Fundación de SIMAPI",
+    description:
+      "Iniciamos con la visión de transformar la gestión hídrica mediante tecnología innovadora.",
+  },
+  {
+    year: "2025",
+    title: "Primer Sensor IoT",
+    description:
+      "Lanzamiento de nuestro primer sensor de monitoreo hídrico inteligente.",
+  },
+  {
+    year: "2027",
+    title: "Expansión Nacional",
+    description: "Alcanzamos presencia en las principales ciudades del país.",
+  },
+];
+---
+
+<section class="py-20 bg-background border-y">
+  <div class="container mx-auto px-4">
+    <SectionTitle
+      title="Nuestra Historia"
+      subtitle="Un viaje de innovación y crecimiento"
+    />
+    <div class="max-w-4xl mx-auto space-y-8">
+      {
+        milestones.map((milestone) => (
+          <div class="flex gap-6">
+            <div class="w-24 flex-shrink-0">
+              <span class="text-2xl font-bold text-blue-600">
+                {milestone.year}
+              </span>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-foreground mb-2">
+                {milestone.title}
+              </h3>
+              <p class="text-muted-foreground">{milestone.description}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

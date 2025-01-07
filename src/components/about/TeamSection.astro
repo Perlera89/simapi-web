@@ -1,0 +1,58 @@
+---
+import SectionTitle from "./SectionTitle.astro";
+
+const team = [
+  {
+    name: "David Díaz",
+    role: "CEO & Fundador",
+    description:
+      "Experto en tecnología con más de 10 años de experiencia en soluciones IoT.",
+    image: "/team/david.jpg",
+  },
+  {
+    name: "Ana Martínez",
+    role: "CTO",
+    description:
+      "Especialista en desarrollo de sistemas embebidos y arquitectura de software.",
+    image: "/team/ana.jpg",
+  },
+  {
+    name: "Carlos Ruiz",
+    role: "Director de Operaciones",
+    description:
+      "Líder en implementación de proyectos y optimización de procesos.",
+    image: "/team/carlos.jpg",
+  },
+];
+---
+
+<section class="py-20 bg-background border-b">
+  <div class="container mx-auto px-4">
+    <SectionTitle
+      title="Nuestro Equipo"
+      subtitle="Conoce a los expertos detrás de SIMAPI"
+    />
+    <div class="grid md:grid-cols-3 gap-8">
+      {
+        team.map((member) => (
+          <div class="bg-background border p-6 rounded-xl shadow-sm hover:shadow-lg transition-shadow">
+            <div class="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4">
+              <img
+                src={member.image}
+                alt={member.name}
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <h3 class="text-xl font-semibold text-foreground text-center mb-2">
+              {member.name}
+            </h3>
+            <p class="text-blue-600 text-center mb-3">{member.role}</p>
+            <p class="text-muted-foreground text-center">
+              {member.description}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

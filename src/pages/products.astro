@@ -1,0 +1,41 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import FeaturedProduct from "../components/products/FeaturedProduct.astro";
+import ProductCard from "../components/products/ProductCard.astro";
+
+const products = [
+  {
+    title: "Sensor SIMAPI Pro",
+    description:
+      "Sistema avanzado de monitoreo hídrico con análisis en tiempo real",
+    image: "/products/sensor.jpg",
+    link: "/productos/sensor-pro",
+  },
+  {
+    title: "SIMAPI Básic",
+    description: "Solución inicial para el control de distribución de agua",
+    image: "/products/sensor.jpg",
+    link: "/productos/sensor-basic",
+  },
+  {
+    title: "SIMAPI Enterprise",
+    description: "Sistema integral para grandes infraestructuras hídricas",
+    image: "/products/sensor.jpg",
+    link: "/productos/sensor-enterprise",
+  },
+];
+---
+
+<Layout title="Productos - SIMAPI">
+  <main class="container mx-auto px-4 py-20">
+    <FeaturedProduct
+      title="Productos SIMAPI"
+      description="La solución más completa para el monitoreo y control de sistemas hídricos. Integra hardware de última generación con software inteligente."
+      image="/products/featured-product.jpg"
+    />
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {products.map((product) => <ProductCard {...product} />)}
+    </div>
+  </main>
+</Layout>

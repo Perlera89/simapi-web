@@ -1,0 +1,23 @@
+---
+import { Button } from "../ui/button";
+interface Props {
+  title: string;
+  description: string;
+  image: string;
+}
+
+const { title, description, image } = Astro.props;
+---
+
+<div class="relative h-[400px] my-16 rounded-2xl overflow-hidden">
+  <img src="/hero.jpg" class="w-full h-full object-cover" />
+  <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent">
+  </div>
+  <div class="absolute bottom-0 left-0 right-0 p-8">
+    <h1 class="text-4xl font-bold text-white mb-4">{title}</h1>
+    <p class="text-lg text-white/70 mb-6 max-w-2xl">{description}</p>
+    <Button>
+      <a href="/cotizar"> Solicitar cotización </a>
+    </Button>
+  </div>
+</div>

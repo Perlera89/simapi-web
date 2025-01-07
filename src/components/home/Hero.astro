@@ -1,0 +1,34 @@
+---
+import Carousel from "@/components/carousel/Carousel";
+import { Button } from "../ui/button";
+---
+
+<section class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 bg-background border-b">
+  <div class="container mx-auto px-4">
+    <div class="flex gap-8 flex-col lg:flex-row items-center">
+      <div class="lg:w-1/2 lg:pr-12">
+        <h1
+          class="text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight max-w-2xl"
+        >
+          Hacemos que la <span class="text-primary">tecnología</span> trabaje para
+          ti
+        </h1>
+        <p class="text-lg text-muted-foreground mb-8 leading-relaxed max-w-xl">
+          Simplifica la tecnología en tu empresa con soluciones innovadoras y
+          soporte personalizado que transformarán tu negocio.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <Button>
+            <a href="https://wa.me/c/13233200647" target="_blank">
+              Cotiza con nosotros
+            </a>
+          </Button>
+          <Button variant="outline"> Conoce más </Button>
+        </div>
+      </div>
+      <div class="lg:w-1/2 mt-12 lg:mt-0">
+        <Carousel client:load />
+      </div>
+    </div>
+  </div>
+</section>

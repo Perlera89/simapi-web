@@ -1,0 +1,52 @@
+---
+import CardComponent from "../Card";
+import { Zap, Timer, Users, Rocket } from "lucide-react";
+
+const benefits = [
+  {
+    title: "Eficiencia",
+    description:
+      "Optimizamos tus procesos tecnológicos para maximizar resultados",
+    icon: Zap,
+  },
+  {
+    title: "Ahorro de tiempo",
+    description: "Soluciones rápidas y efectivas que agilizan tu operación",
+    icon: Timer,
+  },
+  {
+    title: "Soporte personalizado",
+    description: "Atención dedicada y adaptada a las necesidades de tu empresa",
+    icon: Users,
+  },
+  {
+    title: "Tecnología innovadora",
+    description: "Implementamos herramientas de última generación",
+    icon: Rocket,
+  },
+];
+---
+
+<section class="py-20 bg-background border-b">
+  <div class="container mx-auto px-4">
+    <div class="max-w-3xl mx-auto text-center mb-16">
+      <h2 class="text-3xl font-bold text-foreground mb-4">
+        ¿Por qué elegir SIMAPI?
+      </h2>
+      <p class="text-lg text-muted-foreground">
+        Descubre cómo nuestras soluciones pueden transformar tu negocio
+      </p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {
+        benefits.map((benefit) => (
+          <CardComponent
+            title={benefit.title}
+            description={benefit.description}
+            Icon={benefit.icon}
+          />
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,36 @@
+---
+import Logo from "./Logo.astro";
+import MobileMenu from "./MobileMenu.astro";
+import { ModeToggle } from "./ModeToggle";
+import { Button } from "./ui/button";
+import DropdownMenuComponent from "@/components/DropdowMenu";
+---
+
+<header class="fixed w-full z-50 bg-background backdrop-blur-2xl border-b">
+  <div class="container mx-auto px-4 py-4">
+    <div class="flex items-center justify-between">
+      <Logo />
+
+      <nav class="hidden lg:flex z-50 items-center space-x-8">
+        <DropdownMenuComponent client:load />
+        <Button variant="link">
+          <a href="/products">Productos</a>
+        </Button>
+        <Button variant="link">
+          <a href="/docs">Documentación</a>
+        </Button>
+        <Button variant="link">
+          <a href="/about">Sobre Nosotros</a>
+        </Button>
+      </nav>
+
+      <div class="flex items-center space-x-4 ml-21">
+        <ModeToggle client:load />
+        <Button>
+          <a href="https://wa.me/13233200647 " target="_blank"> Contáctanos </a>
+        </Button>
+        <MobileMenu />
+      </div>
+    </div>
+  </div>
+</header>

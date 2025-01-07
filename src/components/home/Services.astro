@@ -1,0 +1,50 @@
+---
+import CardComponent from "../Card";
+import { Globe, PencilRuler, Settings } from "lucide-react";
+import { Button } from "../ui/button";
+
+const services = [
+  {
+    title: "Desarrollo de páginas web",
+    description: "Ayudamos a las empresas a construir su presencia en línea",
+    icon: Globe,
+  },
+  {
+    title: "Soporte técnico",
+    description: "Respuesta rápida para problemas cotidianos",
+    icon: PencilRuler,
+  },
+  {
+    title: "Mantenimiento web",
+    description: "Actualizaciones y optimización constante",
+    icon: Settings,
+  },
+];
+---
+
+<section id="servicios" class="py-20 bg-background border-b">
+  <div class="container mx-auto px-4">
+    <div class="max-w-3xl mx-auto text-center mb-16">
+      <h2 class="text-3xl font-bold text-foreground mb-4">
+        Nuestros Servicios
+      </h2>
+      <p class="text-lg text-muted-foreground">
+        Soluciones tecnológicas diseñadas para tu éxito
+      </p>
+    </div>
+    <div class="grid md:flex md:justify-between gap-8">
+      {
+        services.map((service) => (
+          <CardComponent
+            title={service.title}
+            description={service.description}
+            Icon={service.icon}
+          />
+        ))
+      }
+    </div>
+    <div class="text-center mt-16">
+      <Button> Solicita más información </Button>
+    </div>
+  </div>
+</section>
