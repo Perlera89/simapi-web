@@ -10,17 +10,24 @@ const team = [
     image: "/team/david.jpg",
   },
   {
-    name: "Ana Martínez",
+    name: "Wilian Leiva",
     role: "CTO",
     description:
       "Especialista en desarrollo de sistemas embebidos y arquitectura de software.",
     image: "/team/ana.jpg",
   },
   {
-    name: "Carlos Ruiz",
-    role: "Director de Operaciones",
+    name: "Jhonson Leiva",
+    role: "CTO",
     description:
-      "Líder en implementación de proyectos y optimización de procesos.",
+      "Especialista en desarrollo de sistemas embebidos y arquitectura de software.",
+    image: "/team/ana.jpg",
+  },
+  {
+    name: "Manuel Perlera",
+    role: "Frontend",
+    description:
+      "Desarrollador frontend con experiencia en tecnologías modernas.",
     image: "/team/carlos.jpg",
   },
 ];
@@ -32,7 +39,7 @@ const team = [
       title="Nuestro Equipo"
       subtitle="Conoce a los expertos detrás de SIMAPI"
     />
-    <div class="grid md:grid-cols-3 gap-8">
+    <div class="grid md:grid-cols-3 justify-items-center gap-8">
       {
         team.map((member) => (
           <div class="bg-background border p-6 rounded-xl shadow-sm hover:shadow-lg transition-shadow">
