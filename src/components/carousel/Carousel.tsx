@@ -9,16 +9,12 @@ import {
 
 const images = [
   {
-    src: "/carousel/1.png",
+    src: "/carousel/1.jpg",
+    alt: "El agua es vida",
+  },
+  {
+    src: "/carousel/2.jpg",
     alt: "Tecnología empresarial",
-  },
-  {
-    src: "/hero.jpg",
-    alt: "Soluciones innovadoras",
-  },
-  {
-    src: "/hero.jpg",
-    alt: "Soporte técnico",
   },
 ];
 

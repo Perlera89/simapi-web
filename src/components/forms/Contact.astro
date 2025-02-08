@@ -4,6 +4,36 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "../ui/button";
+import emailjs from "@emailjs/browser";
+
+// Función para manejar el envío del formulario
+const handleFormSubmit = async (event) => {
+  event.preventDefault();
+
+  const formData = new FormData(event.target);
+  const data = {
+    name: formData.get("name"),
+    email: formData.get("email"),
+    subject: formData.get("subject"),
+    message: formData.get("message"),
+  };
+
+  try {
+    await emailjs.send(
+      "service_4m6ixwm",
+      "template_9s36b1a",
+      data,
+      "J2GcYnbd8MInGklby"
+    );
+    alert(
+      "Mensaje enviado correctamente. Nos pondremos en contacto contigo pronto."
+    );
+    // event.target.reset();
+  } catch (error) {
+    console.error("Error:", error);
+    alert("Hubo un error al enviar el mensaje. Por favor, intenta nuevamente.");
+  }
+};
 ---
 
 <section class="py-20 bg-background">
@@ -16,6 +46,7 @@ import { Button } from "../ui/button";
       <form
         id="contactForm"
         class="bg-background border p-8 rounded-xl shadow-sm"
+        onsubmit={handleFormSubmit}
       >
         <div class="space-y-6">
           <div class="grid gap-4">
@@ -36,36 +67,11 @@ import { Button } from "../ui/button";
           <div class="grid gap-4">
             <Label htmlFor="message">Mensaje</Label>
             <Textarea rows={4} id="message" name="message" required />
-
-            <Button type="submit"> Enviar mensaje </Button>
           </div>
+
+          <Button type="submit">Enviar mensaje</Button>
         </div>
       </form>
     </div>
   </div>
-
-  <script>
-    document
-      .getElementById("contactForm")
-      ?.addEventListener("submit", async (e) => {
-        e.preventDefault();
-
-        const formData = new FormData(e.target as HTMLFormElement);
-        const data = Object.fromEntries(formData);
-
-        try {
-          // Here you would typically send the data to your backend
-          console.log("Form data:", data);
-          alert(
-            "Mensaje enviado correctamente. Nos pondremos en contacto contigo pronto."
-          );
-          (e.target as HTMLFormElement).reset();
-        } catch (error) {
-          console.error("Error:", error);
-          alert(
-            "Hubo un error al enviar el mensaje. Por favor, intenta nuevamente."
-          );
-        }
-      });
-  </script>
 </section>
